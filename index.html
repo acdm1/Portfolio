@@ -71,7 +71,7 @@
 		$.getJSON("markers1.geojson",function(data){
 			var markers1 = L.icon({
 					iconUrl: "images/marker1.png",
-					iconSize: [16,16]
+					iconSize: [32,32]
 				});
 			L.geoJson(data, {
 				pointToLayer: function(feature, latlng){
