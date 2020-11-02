@@ -29,8 +29,13 @@
 
 		<script>
 		var mymap = L.map('map').setView([47.615, -122.332], 11);
+/*
 		var basemap = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
 			attribution: 'Map Tiles by &copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+*/
+var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+
 				maxZoom: 14, minZoom: 11,
 			}).addTo(mymap);
 /*****************************************************************/
@@ -39,8 +44,8 @@
 			L.geoJson(data1, {
 				style : function(feature) {
 					return {
-						color: '#8300ff',
-						weight: 0.2,
+						color: '#ff00a1',
+						weight: 0.25,
 						fillOpacity: 0.1,
 					}
 				}
@@ -52,7 +57,7 @@
 			L.geoJson(data2, {
 				style : function(feature) {
 					return {
-						color: '#faff00',
+						color: '#2bff00',
 						weight: 1,
 						fillOpacity: 0.1,
 					}
@@ -61,8 +66,8 @@
 		});
 /*****************************************************************/
 /*Personal Markers ands Symbols*/
-		$.getJSON("markers1.json",function(data){
-			L.geoJson(data, {
+		$.getJSON("markers1.geojson",function(markers){
+			L.geoJson(markers, {
 
 			}).addTo(mymap);
 		});
