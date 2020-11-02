@@ -17,11 +17,17 @@
 
 	</head>
 	<body>
-		<h1>Working Title</h1>
+		<h1>Zoning and Equity Display</h1>
 		<div id="map" style="height: 75%"></div>
 <!---------------------------------------------------------------->
 
-		<p>This map is an overlay of the data representing zoning details along side some of the equity measurees collected within the last year. Data dipicting the <br><a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/current-land-use-zoning-detail/geoservice">Current Land Use Zoning Detail</a> & <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/racial-and-social-equity-composite-index/geoservice">Racial and Social Equity Composite Index</a><br>comes from… This data…</p>
+		<p>This map is an overlay of the data representing zoning details, alongside some of the equity measures collected within the last year. Data dipicting the <br><a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/current-land-use-zoning-detail/geoservice">Current Land Use Zoning Detail</a> & <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/racial-and-social-equity-composite-index/geoservice">Racial and Social Equity Composite Index</a><br>comes from…
+
+		It provides information on the type of zoning, overlay districts, enacting ordinance numbers and effective dates.
+
+		~Zoning Code governs the use and development of land in Seattle. Zoning districts specify a category of uses (e.g., single-family residential, multifamily residential, commercial, industrial, etc.) including specific overlays and are applied by ordinance.
+
+		The Racial and Social Equity Index combines information on race, ethnicity, and related demographics with data on socioeconomic and health disadvantages to identify where priority populations make up relatively large proportions of neighborhood residents.</p>
 		<p>To beteter under stand the… this map was bullt, to highlight the different way…s <a href="https://hazards.uw.edu/geology/m9/">M9 Project</a>.</p>
 <!---------------------------------------------------------------->
 		<div id="legend">
@@ -29,13 +35,13 @@
 
 		<script>
 		var mymap = L.map('map').setView([47.615, -122.332], 11);
-/*
+/*****************************************************************/
 		var basemap = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
 			attribution: 'Map Tiles by &copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-*/
-var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-
+/*****************************************************************
+		var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+/*****************************************************************/
 				maxZoom: 14, minZoom: 11,
 			}).addTo(mymap);
 /*****************************************************************/
@@ -46,7 +52,7 @@ var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all
 					return {
 						color: '#ff00a1',
 						weight: 0.25,
-						fillOpacity: 0.1,
+						fillOpacity: 0.05,
 					}
 				}
 			}).addTo(mymap);
@@ -59,7 +65,7 @@ var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all
 					return {
 						color: '#2bff00',
 						weight: 1,
-						fillOpacity: 0.1,
+						fillOpacity: 0.00,
 					}
 				}
 			}).addTo(mymap);
