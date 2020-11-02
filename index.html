@@ -10,7 +10,6 @@
 			<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   			crossorigin=""></script>
-<!---------------------------------------------------------------->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 			<script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
 <!---------------------------------------------------------------->
@@ -19,28 +18,30 @@
 	<body>
 		<h1>Zoning and Equity Display</h1>
 		<div id="map" style="height: 75%"></div>
-<!---------------------------------------------------------------->
+			<div id="legend">
+				<h3><center>Map Legend</center></h3>
+			</div>
 
-		<p>This map is an overlay of the data representing zoning details, alongside some of the equity measures collected within the last year. Data dipicting the <br><a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/current-land-use-zoning-detail/geoservice">Current Land Use Zoning Detail</a> & <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/racial-and-social-equity-composite-index/geoservice">Racial and Social Equity Composite Index</a><br>comes from…
-
+		<p>This map is an overlay of the data representing zoning details, alongside some of the equity measures collected within the last year. Data dipicting the <br><a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/current-land-use-zoning-detail/geoservice">Current Land Use Zoning Detail</a> & <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/racial-and-social-equity-composite-index/geoservice">Racial and Social Equity Composite Index</a>.
+		<br><br>
+		This data comes from…
+		<br><br>
 		It provides information on the type of zoning, overlay districts, enacting ordinance numbers and effective dates.
-
+		<br><br>
 		~Zoning Code governs the use and development of land in Seattle. Zoning districts specify a category of uses (e.g., single-family residential, multifamily residential, commercial, industrial, etc.) including specific overlays and are applied by ordinance.
-
-		The Racial and Social Equity Index combines information on race, ethnicity, and related demographics with data on socioeconomic and health disadvantages to identify where priority populations make up relatively large proportions of neighborhood residents.</p>
+		<br><br>
+		The Racial and Social Equity Index combines information on race, ethnicity, and related demographics with data on socioeconomic and health disadvantages to identify where priority populations make up relatively large proportions of neighborhood residents.
+		<br><br>
 		<p>To beteter under stand the… this map was bullt, to highlight the different way…s <a href="https://hazards.uw.edu/geology/m9/">M9 Project</a>.</p>
 <!---------------------------------------------------------------->
-		<div id="legend">
-			<h3><center>Map Legend</center></h3>
-
 		<script>
 		var mymap = L.map('map').setView([47.615, -122.332], 11);
-/*****************************************************************/
+/*****************************************************************
 		var basemap = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
 			attribution: 'Map Tiles by &copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-/*****************************************************************
+/*****************************************************************/
 		var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+			attribution: 'Map Tiles by &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 /*****************************************************************/
 				maxZoom: 14, minZoom: 11,
 			}).addTo(mymap);
@@ -49,7 +50,15 @@
 		$.getJSON("JSONData1.json",function(data1){
 			L.geoJson(data1, {
 				style : function(feature) {
-					return {
+					var fillcolor,
+							 CCLASS_DESC = feature.properties.CCLASS_DESC;
+							 if ( CCLASS_DESC == "Manufacturing\/Industry" ) fillColor = "#00ff00";
+							 else if ( CCLASS_DESC == "Commercial\/Mixed Use" ) fillColor = "#cc33ff";
+							 else if ( CCLASS_DESC == "Neighborhood Commercial" ) fillColor = "#ff8000";
+							 else if ( CCLASS_DESC == "Single Family" ) fillColor = "#ffff00";
+							 else if ( CCLASS_DESC == "Multi-family" ) fillColor = "#669999";
+							 else fillColor = "#ffffff";
+					 return {
 						color: '#ff00a1',
 						weight: 0.25,
 						fillOpacity: 0.05,
@@ -62,21 +71,35 @@
 		$.getJSON("JSONData2.json",function(data2){
 			L.geoJson(data2, {
 				style : function(feature) {
-					return {
-						color: '#2bff00',
-						weight: 1,
-						fillOpacity: 0.00,
-					}
+				return {
+					color: '#2bff00',
+					weight: 1,
+					fillOpacity: 0.00,
+				}
 				}
 			}).addTo(mymap);
 		});
 /*****************************************************************/
 /*Personal Markers ands Symbols*/
-		$.getJSON("markers1.geojson",function(markers){
-			L.geoJson(markers, {
-
+		$.getJSON("markers1.geojson",function(data){
+			var markers1 = L.icon({
+					iconUrl: "images\marker1.png",
+					iconSize: [16,16]
+				});
+			L.geoJson(data, {
+				pointToLayer: function(feature, latlng){
+					var marker = L.marker(latlng, {icon: markers1});
+					marker.bindPopup("<strong>Name: </strong> " + feature.properties.Name + "<br><strong>CLASS_DESC: </strong>" + feature.properties.CLASS_DESC + "<br><strong>Address: </strong>" + feature.properties.Address + "<br><strong>Coordinates: </strong>" + feature.geometry.coordinates);
+					return marker;
+				}
 			}).addTo(mymap);
 		});
+/*****************************************************************/
+/*Welcome Popup*/
+	var popup = L.popup()
+    .setContent("<b>You've Found:</b><br>!!!!Seattle, WA.!!!!")
+    .openOn(mymap);
+/*****************************************************************/
 		</script>
 		<script src="index.js"></script>
 	</body>

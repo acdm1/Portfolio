@@ -1,29 +1,33 @@
-/*Legend*/
-		var Legend =  new L.Control.Legend({
-      position: 'topright',
-		});
+/**Legend**/
+var Legend =  new L.Control.Legend({
+  position: 'topright',
+});
 
-		mymap.addControl(Legend);
-		  $(".legend-container").append( $("#legend") );
+mymap.addControl(Legend);
+  $(".legend-container").append( $("#legend") );
 /*****************************************************************/
-/*Generic Marker*/
-		var point = L.marker([47.606, -122.332]).addTo(mymap);
-			point.bindPopup("<b>You've Found!</b><br>Seattle, WA.");
+/*Circle*/
+var circle = L.circle([47.606, -122.332], {
+  color: "#1c6b00",
+  fillColor: "#1c6b00",
+  fillOpacity: 0.25,
+  radius: 500
+}).addTo(mymap);
 /*****************************************************************/
-    var circle = L.circle([47.606, -122.332], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-    }).addTo(mymap);
+/*Polygon*
+var polygon = L.polygon([[47.509, -122.08],[47.503, -122.06],[547.51, -122.047]], {
+  color: "green",
+  fillColor: "black",
+  fillOpacity: 0.25,
+}).addTo(mymap);
 /*****************************************************************/
-    var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-    ]).addTo(mymap);
+/**/
+  marker.bindPopup("").openPopup();
+  circle.bindPopup("Look here");
+  polygon.bindPopup("This zone holds a cluster of issues relating to equality");
 /*****************************************************************/
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-    circle.bindPopup("I am a circle.");
-    polygon.bindPopup("I am a polygon.");
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
 /*****************************************************************/

@@ -1,0 +1,77 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "metadata": {
+        "Title": ""
+      },
+      "type": "Feature",
+      "properties": {
+        "Name": "Space Needle",
+        "CLASS_DESC": "Downtown",
+        "Address": "400 Broad St, Seattle, WA 98109"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.34,
+          47.62
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "Title": ""
+      },
+      "type": "Feature",
+      "properties": {
+        "Name": "UW Seattle Campus",
+        "CLASS_DESC": "Commercial/Mixed",
+        "Address": "4020 E Stevens Way NE, Seattle, WA 98195"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3,
+          47.65
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "Title": ""
+      },
+      "type": "Feature",
+      "properties": {
+        "Name": "Salle Auriol Seattle Fencing Club",
+        "CLASS_DESC": "Commercial/Mixed",
+        "Address": "1415 Elliott Ave W, Seattle, WA 98119"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.37,
+          47.63
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "Title": "Seattle VA Hospital"
+      },
+      "type": "Feature",
+      "properties": {
+        "Name": "Seattle VA Hospital",
+        "CLASS_DESC": "Neighborhood Commercial",
+        "Address": "1660 S Columbian Way, Seattle, WA 98108"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3,
+          47.56
+        ]
+      }
+    }
+  ]
+}

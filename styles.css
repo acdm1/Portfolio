@@ -1,6 +1,6 @@
-body {
+html, body {
   background-color: #939fca;
-  background-image: url("images/SkyGrade.jpg");
+  background-image: url("images/SkyGrade.JPG");
   background-repeat: no-repeat;
   background-size: auto;
   background-attachment: scroll;
