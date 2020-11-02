@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------------
+https://opendata.arcgis.com/datasets/225a4c2c50e94f2cb548a046217f49f7_0.geojson
+https://data-seattlecitygis.opendata.arcgis.com/datasets/racial-and-social-equity-composite-index/geoservice
+
+
+-The Racial and Social Equity Index combines information on race, ethnicity, and related demographics with data on socioeconomic and health disadvantages to identify where priority populations make up relatively large proportions of neighborhood residents.
+The Composite Index includes sub-indices of:
+
+    Race, English Language Learners, and Origins Index
+-ranks census tracts by an index of three measures weighted as follows:
+    ~Persons of color (weight: 1.0)
+    ~English language learner (weight: 0.5)
+    ~Foreign born (weight: 0.5)
+---------------------------------------------------------------------------------------
+https://opendata.arcgis.com/datasets/dd29065b5d01420e9686570c2b77502b_0.geojson
+https://data-seattlecitygis.opendata.arcgis.com/datasets/current-land-use-zoning-detail/geoservice
+
+
+~A polygon feature class showing current City of Seattle land use zoning areas. It provides information on the type of zoning, overlay districts, enacting ordinance numbers and effective dates.
+~Zoning Code governs the use and development of land in Seattle. Zoning districts specify a category of uses (e.g., single-family residential, multifamily residential, commercial, industrial, etc.) including specific overlays and are applied by ordinance.
+~Symbolized on the value DETAIL_DESC (28 categories).
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------

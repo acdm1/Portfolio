@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Lab2</title>
+			<link rel="icon" href="images/Tk Logo [FloatingStamp].png" type="image/gif" sizes="16x16" alt="Andre/Tk's Logo">
+			<link rel="stylesheet" href="styles.css">
+			<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+			  crossorigin=""/>
+			<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  			crossorigin=""></script>
+<!---------------------------------------------------------------->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+<!---------------------------------------------------------------->
+
+	</head>
+	<body>
+		<h1>Working Title</h1>
+		<div id="map" style="height: 75%"></div>
+<!---------------------------------------------------------------->
+
+		<p>This map is an overlay of the data representing zoning details along side some of the equity measurees collected within the last year. Data dipicting the <br><a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/current-land-use-zoning-detail/geoservice">Current Land Use Zoning Detail</a> & <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/racial-and-social-equity-composite-index/geoservice">Racial and Social Equity Composite Index</a><br>comes from… This data…</p>
+		<p>To beteter under stand the… this map was bullt, to highlight the different way…s <a href="https://hazards.uw.edu/geology/m9/">M9 Project</a>.</p>
+<!---------------------------------------------------------------->
+		<div id="legend">
+			<h3><center>Map Legend</center></h3>
+
+		<script>
+		var mymap = L.map('map').setView([47.615, -122.332], 11);
+		var basemap = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+			attribution: 'Map Tiles by &copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+				maxZoom: 14, minZoom: 11,
+			}).addTo(mymap);
+/*****************************************************************/
+/*Land Use and Zoning*/
+		$.getJSON("JSONData1.json",function(data1){
+			L.geoJson(data1, {
+				style : function(feature) {
+					return {
+						color: '#8300ff',
+						weight: 0.2,
+						fillOpacity: 0.1,
+					}
+				}
+			}).addTo(mymap);
+		});
+/*****************************************************************/
+/*R,E, and D*/
+		$.getJSON("JSONData2.json",function(data2){
+			L.geoJson(data2, {
+				style : function(feature) {
+					return {
+						color: '#faff00',
+						weight: 1,
+						fillOpacity: 0.1,
+					}
+				}
+			}).addTo(mymap);
+		});
+/*****************************************************************/
+/*Personal Markers ands Symbols*/
+		$.getJSON("markers1.json",function(data){
+			L.geoJson(data, {
+
+			}).addTo(mymap);
+		});
+		</script>
+		<script src="index.js"></script>
+	</body>
+</html>
