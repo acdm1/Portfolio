@@ -3,7 +3,7 @@ html, body {
   background-image: url("images/SkyGrade.JPG");
   background-repeat: no-repeat;
   background-size: auto;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center;
   font-family: Courier;
   max-width: 900px;
