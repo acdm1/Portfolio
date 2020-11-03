@@ -6,7 +6,7 @@ var Legend =  new L.Control.Legend({
 mymap.addControl(Legend);
   $(".legend-container").append( $("#legend") );
 /*****************************************************************/
-/*Circle*/
+/*Circle*
 var circle = L.circle([47.606, -122.332], {
   color: "#1c6b00",
   fillColor: "#1c6b00",
