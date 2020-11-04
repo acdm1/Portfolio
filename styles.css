@@ -49,6 +49,7 @@ a:-webkit-any-link {
 }
 
 #legend {
+  color: Green;
   line-height: 0px;
   background: none;
   opacity: 0.9;
