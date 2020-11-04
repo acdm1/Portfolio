@@ -3,7 +3,7 @@ html, body {
   background-image: url("images/SkyGrade.JPG");
   background-repeat: no-repeat;
   background-size: auto;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center;
   font-family: Courier;
   max-width: 900px;
@@ -18,7 +18,7 @@ h1 {
 }
 
 h3 {
-  color: #784418;
+  color: #a35716;
   font-family: georgia;
   font-size: 20px;
   text-align: center;
@@ -50,7 +50,7 @@ a:-webkit-any-link {
 
 #legend {
   line-height: 0px;
-  background: white;
-  opacity: 0.8;
+  background: none;
+  opacity: 0.9;
   padding:5px 25px 5px 0px;
 }
