@@ -48,26 +48,29 @@
 			L.geoJson(data1, {
 				style : function(feature) {
 					 return {
-						color: '#ff00a1',
-						weight: 0.25,
-						fillOpacity: 0.05,
+							color: "#ff00a1",
+							fillOpacity: 0.05,
+							fillColor: "#ff00a1",
+							weight: 0.25,
 					}
 				}
 			}).addTo(mymap);
 		});
+/*****************************************************************/
 /*R,E, and D*/
 		$.getJSON("JSONData2.json",function(data2){
-			L.geoJson(data2, {
+			data2 = L.geoJson(data2, {
 				style : function(feature) {
 					return {
 						color: '#2bff00',
-						weight: 1,
-						fillOpacity: 0.00,
+						fillOpacity: 0.1,
+						fillColor: "#2bff00",
+						weight: 0.8,
 					}
 				}
 			}).addTo(mymap);
 		});
-/*Personal Markers ands Symbols*/
+/*Personal Markers and Symbols*/
 		$.getJSON("markers1.geojson",function(data){
 			var markers1 = L.icon({
 					iconUrl: "images/marker1.gif",
