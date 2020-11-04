@@ -88,10 +88,17 @@
 				}
 			}).addTo(mymap);
 		});
-/*Welcome Popup*/
-	// var popup = L.popup()
-  //   .setContent("<b>You've Found:</b><br>!!!!Seattle, WA.!!!!")
-  //   .openOn(mymap);
+/*Popup*/
+		var popup = L.popup()
+				.setLatLng([47.67, -122.43])
+		    .setContent("<b>You've Found:</b><br>!!!!Seattle, WA.!!!!")
+	    .openOn(mymap);
+
+		function onMapClick(e) {
+	    alert("You clicked the map at " + e.latlng);
+		}
+
+		mymap.on('click', onMapClick);
 		</script>
 		<script src="index.js"></script>
 	</body>
