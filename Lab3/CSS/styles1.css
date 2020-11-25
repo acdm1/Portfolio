@@ -1,0 +1,87 @@
+.rightside {
+  max-width: 330px;
+  float: right;
+  margin-right: 2%;
+  margin-left: -1%;
+}
+
+.leftside {
+  max-width: 470px;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+}
+
+.legend {
+  color: #f4e3d8;
+  background-color: #3f2741;
+  border: 2px solid rgba(138,99,0,.66);
+  font-style: italic;
+  font-family: Courier;
+}
+
+#地図1 {
+  /* position: absolute; */
+  margin: auto;
+  width: 60%;
+  height: 450px;
+  float: inherit;
+}
+
+#地図2 {
+  /* position: absolute; */
+  margin: auto;
+  width: 60%;
+  height: 450px;
+  float: inherit;
+}
+
+.mapboxgl-popup {
+  color: Blue;
+  max-width: 400px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+#buttons1 {
+  width: 40%;
+  margin-left: -25px;
+  margin-top: -1px;
+  padding-right: 20px;
+}
+
+.button1 {
+  display: inline-block;
+  cursor: help;
+  width: 30%;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #cdb015;
+  background: #614563;
+  font-family: Cinzel Decorative;
+  font-style: italic;
+}
+
+#buttons2 {
+  width: 40%;
+  margin-left: -25px;
+  margin-top: -1px;
+  padding-right: 20px;
+}
+
+.button2 {
+  display: inline-block;
+  cursor: help;
+  width: 30%;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #cdb015;
+  background: #614563;
+  font-family: Cinzel Decorative;
+  font-style: italic;
+}

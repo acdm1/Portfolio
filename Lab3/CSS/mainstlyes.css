@@ -1,0 +1,48 @@
+html, body {
+  background-color: #614563;
+  /* background-image: url("../Images/SkyGrade.JPG"); */
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: Courier;
+  max-width: 2400px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #9d3c00;
+	font-family: 'Cinzel Decorative';
+  font-size: 40px;
+  font-style: italic;
+  text-align: right;
+  margin-right: 2%;
+}
+
+h3 {
+  color: #cdb015;
+  font-family: georgia;
+  font-size: 25px;
+  text-align: center;
+}
+
+h4 {
+  color: #0e3825;
+	font-family: 'Cinzel Decorative';font-size: 22px;
+  font-style: italic;
+}
+
+p {
+  color: #231b02;
+  font-family: georgia;
+  font-size: 15px;
+  margin-right: 10%;
+  margin-left: 2%;
+  text-align: left;
+}
+
+:-webkit-any-link {
+  color: #9e5f15;
+  cursor: pointer;
+}

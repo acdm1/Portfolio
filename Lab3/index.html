@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+      <title>ACDM1: 地図-Vibes</title>
+        <link rel="icon" href="Images/Tk Logo [FloatingStamp].png" type="image/gif" sizes="16x16" alt="Andre/Tk's Logo">
+        <link rel="stylesheet" href="CSS/mainstlyes.css">
+        <link rel="stylesheet" href="CSS/styles1.css">
+        <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+          <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+          <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+          <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+          <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+          <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css" />
+            <!-- <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> -->
+  </head>
+<body>
+  <h1>Police, Politics &<br>Sirens Maps<h1>
+      <h3>Map 1: Election Precincts and their Police Stations</h3>
+      <div class="rightside">
+        <p class="legend">LEGEND:<br>
+          <div id="legend">
+            <ul style="list-style-type:none">
+              <li>
+                <svg width="9" height="9">
+                  <img src="images/PoliceIcon(Mapbox).png" height=20px width=20px>
+                </svg>
+                <text>Police Stations</text>
+              </li>
+              <li>
+                <svg width="27" height="27">
+                  <rect x="12" y="14" height="12" width="12" stroke="#ff00a1" stroke-width="2" fill="#29e2ad" fill-opacity=".25"/>
+                </svg>
+                <text>Election Precincts</text>
+              </li>
+            </ul>
+          </div>
+        </p>
+      </div>
+      <div id="地図1"></div>
+      <!-- <div class="leftside"> -->
+        <!-- <ul id="buttons1"> -->
+          <!-- <li id="button-en" class="button1">English</li> -->
+          <!-- <li id="button-es" class="button1">Español</li> -->
+          <!-- <li id="button-ja" class="button1">日本語</li> -->
+          <!-- <li id="button-ru" class="button1">Русский</li> -->
+          <!-- <li id="button-ko" class="button1">한국어</li> -->
+          <!-- <li id="button-zn" class="button1">中文</li> -->
+          <!-- <li id="button-ar" class="button1">عربى</li> -->
+          <!-- <li id="button-mul" class="button1">Multi</li> -->
+        <!-- </ul> -->
+      <!-- </div> -->
+      <div id="menu">
+        <input id="streets-v11" type="radio" name="rtoggle" value="streets" />
+        <label for="streets-v11">streets</label>
+        <input id="light-v10" type="radio" name="rtoggle" value="light" />
+        <label for="light-v10">light</label>
+        <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+        <label for="dark-v10">dark</label>
+        <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+        <label for="outdoors-v11">outdoors</label>
+        <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
+        <label for="satellite-v9">satellite</label>
+      </div>
+      <br>
+        <p>
+        DESCRIPTION & CITATION:
+        <br> This map functions as a reference for understanding how police stations are positioned in relation to election precincts around Pierce County.
+        <br> Reviews of this material may reveal significant insights relating to the nature of policing practices in America, and the proximity to be found between political leanings and .
+        <br>
+        <br>The data found on this map comes from 2 sources. The first is the <a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/election-precincts?geometry=-124.709%2C46.835%2C-119.482%2C47.489&selectedAttribute=LEGDIST">Pierce County Election Precincts</a>, and the second is <a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/police-stations">Police Stations</a>
+        </p>
+      <br>
+      <h3>Map 2: Where Can I Find Sirens?</h3>
+      <div class="rightside">
+        <p class="legend">LEGEND:<br>
+          <ul style="list-style-type:none">
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#009921" stroke-width="2" fill="#009921" fill-opacity="1"/>
+              </svg>
+              <text>Emergency Care Facilities</text>
+            </li>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#fe0101" stroke-width="0" fill="#fe0101" fill-opacity=".5"/>
+              </svg>
+              <text>Fire Stations</text>
+            </li>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#053ae7" stroke-width="0" fill="#053ae7" fill-opacity="1"/>
+              </svg>
+              <text>Police Stations</text>
+            </li>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#fe0101" stroke-width="3" fill="#053ae7" fill-opacity="1"/>
+              </svg>
+              <text>Dual Facility</text>
+            </li>
+        </p>
+      </div>
+      <div id="地図2"></div>
+      <div class="leftside">
+        <ul id="buttons2">
+          <li id="button-en" class="button2">English</li>
+          <li id="button-es" class="button2">Español</li>
+          <!-- <li id="button-ja" class="button2">日本語</li> -->
+          <!-- <li id="button-ru" class="button2">Русский</li> -->
+          <!-- <li id="button-ko" class="button2">한국어</li> -->
+          <!-- <li id="button-zn" class="button2">中文</li> -->
+          <!-- <li id="button-ar" class="button2">عربى</li> -->
+          <!-- <li id="button-mul" class="button2">Multi</li> -->
+        </ul>
+      </div>
+        <br>
+        <p>
+        DESCRIPTION & CITATION:
+        <br> Utilizing this  map, we should be able to infer, first the fire/police department that might respond to an emergency within a particular jurisdiction of pierce county.
+        <br> And then, if it is a medical emergency, the closest facility most likely to be equipped to address the issue might also be quickly determined.
+        <br>
+        <br>For more detailed information about data on <a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/fire-stations-in-pierce-county">Firestations</a>,
+        <a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/police-stations">Police Stations</a>, and <a href="https://gisdata-piercecowa.opendata.arcgis.com/datasets/public-health-care-facilities">Health Care Facilities</a> please follow the respective links provided.
+        </p>
+      <br>
+    <script src="JS/mainindex.js"></script>
+    <script src="JS/index1.js"></script>
+    <script src="JS/index2.js"></script>
+  </body>
+</html>
