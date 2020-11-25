@@ -13,24 +13,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWNkbTEiLCJhIjoiY2toMmY5cmw0MDEyMDJ1bzR5eXZza
 );
 
 地図1.addControl(new mapboxgl.FullscreenControl());
-
-// 地図1.addControl(new mapboxgl.NavigationControl());
 //****************************************//
-
-var layerList = document.getElementById('menu');
-var inputs = layerList.getElementsByTagName('input');
-
-function switchLayer(layer) {
-  var layerId = layer.target.id;
-  地図1.setStyle('mapbox://styles/mapbox/' + layerId);
-}
-
-for (var i = 0; i < inputs.length; i++) {
-  inputs[i].onclick = switchLayer;
-}
-
-//****************************************//
-
 地図1.on('load', function () {
   地図1.addSource('Election_Precincts', {
     'type': 'geojson',
