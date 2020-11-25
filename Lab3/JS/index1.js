@@ -42,7 +42,7 @@ for (var i = 0; i < inputs.length; i++) {
       'type': 'fill',
       'source': 'Election_Precincts',
       'paint': {
-        'fill-color': 'rgba(41,226,173,.15)',
+        'fill-color': 'rgba(9,98,203,.25)',
         'fill-outline-color': 'rgba(250,0,225,.30)'
       }
     });

@@ -7,14 +7,6 @@
   document.getElementById('buttons2').addEventListener('click', function (event) {var language = event.target.id.substr('button-'.length);地図2.setLayoutProperty('country-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('state-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('settlement-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('settlement-subdivision-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('airport-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('poi-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('water-point-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('water-line-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('natural-point-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('natrual-line-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('waterway-label', 'text-field', ['get','name_' + language]);地図2.setLayoutProperty('road-label', 'text-field', ['get','name_' + language]);});
 
   //*********************************************************************//
-
-
-
-
-
-
-
-
   //*********************************************************************//
   //*********************************************************************//
   //*********************************************************************//
