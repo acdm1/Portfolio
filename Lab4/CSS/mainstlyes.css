@@ -12,7 +12,7 @@ html, body {
 }
 
 h1 {
-  color: #9f7045;
+  color: #ac5c03;
 	font-family: 'Cinzel Decorative';
   font-size: 40px;
   font-style: italic;
@@ -21,7 +21,7 @@ h1 {
 }
 
 h3 {
-  color: #ffa90073;
+  color: #563900c2;
   font-family: georgia;
   font-size: 25px;
   text-align: center;
@@ -34,7 +34,7 @@ h4 {
 }
 
 p {
-  color: #231b02;
+  color: #0a2924;
   font-family: georgia;
   font-size: 15px;
   margin-right: 10%;
@@ -64,7 +64,7 @@ p {
 }
 
 .header {
-  background-color: #003b0a8c;
+  background-color: #003b0ac4;
   padding: 1px;
 }
 
@@ -82,9 +82,18 @@ ul {
 }
 
 .aside {
-  background-color: #1100471c;
+  background-color: #00474017;
   padding: 15px;
-  color: #ffffff;
+  color: #403f49;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.aside2 {
+  background-color: #707da2;
+  padding: 15px;
+  color: #403f49;
   text-align: center;
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -104,7 +113,7 @@ ul {
 
 .infobar2 {
   background-color: #00746a1a;
-  background-image: linear-gradient(to right, #00746a1a,#ac7303a3);
+  background-image: linear-gradient(to right, #00746a08,#ac7303);
   color: #ffffff;
   text-align: left;
   font-size: 12px;
@@ -112,7 +121,7 @@ ul {
 }
 
 .infobar3 {
-  background-image: linear-gradient(to right, #88000047,#ac7303a3);
+  background-image: linear-gradient(to right, #6f050582,#ac7303);
   padding: 15px;
 }
 
@@ -123,7 +132,7 @@ ul {
   font-size: 15px
 }
 #footer {
-  background-color: #091801a1;
+  background-color: #0d2500c9;
   color: #d6d09f;
   text-align: center;
   font-size: 15px;
