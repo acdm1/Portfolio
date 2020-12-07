@@ -31,6 +31,8 @@ h4 {
   color: #0e3825;
 	font-family: 'Cinzel Decorative';font-size: 22px;
   font-style: italic;
+  background-image: linear-gradient(to right, #6f050582,#ac7303);
+  border: 5px solid #073107;
 }
 
 p {
