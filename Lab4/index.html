@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lab 4</title>
+        <link rel="icon" href="Images/Tk Logo [FloatingStamp].png" type="image/gif" sizes="16x16" alt="Andre/Tk's Logo">
+        <link rel="stylesheet" href="CSS/mainstlyes.css">
+        <link rel="stylesheet" href="CSS/styles1.css">
+        <link rel="stylesheet" href="CSS/styles2.css">
+        <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+          <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+          <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+          <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+          <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css"/>
+          <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Paved Routes & Riding Guide</h1>
+    </div>
+    <div class="infobar3"></div>
+    <div class="infobar1">
+      <p id="infobar1">This site is for those of you who are new to the Pierce County area and wish to engage in recreational activities relating to paved paths and casual longboarding/skateboarding.<br>Many challenges arise for the avid rider though, and especially as their skills are just improving. Utilize this space to learn what those challenges are, and to find the right level paths and locations for your riding goals! Welcome to the club! Let’s Get To Riding!</p>
+    </div>
+
+    <div class="row">
+      <div class="col-2 col-s-2">
+        <div class="aside">
+          <ul>
+            <li>
+              <svg width="50" height="5">
+                <rect width="50" height="5" style="fill:#cd047d;stroke-width:10;stroke:none" />
+              </svg>
+              <text>Paved Routes</text>
+            </li>
+            <br>
+            <li>
+              <svg width="25" height="25">
+                <rect width="25" height="25" style="fill:#ffd414;stroke-width:10;stroke:none" />
+              </svg>
+              <text>Golf Courses</text>
+            </li>
+            <br>
+            <li>
+              <svg width="25" height="25">
+                <rect width="25" height="25" style="fill:#ff700a;stroke-width:10;stroke:none" />
+              </svg>
+              <text>Age Measure</text>
+            </li>
+            <br>
+            <li>
+              <svg width="2" height="2">
+                <img src="images/marker1.gif" height=20px width=20px>
+              </svg>
+              <text>Notable Locations</text>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-7 col-s-9">
+        <h4>Map 1</h4>
+        <div id="地図1"></div>
+        <p>This first map shows you the parks located near paved paths, as these would be places either before after or during which to spend time</p>
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="aside">
+          <h3>Location Preview</h3>
+          <img src="images/ChambersBay.gif" height=200px>
+        </div>
+      </div>
+    </div>
+
+    <div class="infobar2">
+      <p>When first learning what you can get away with in an area, one of the first demographics to consider is the elderly. With respect, safety, and generational/cultural differences in mind, proximity to the elderly is a huge consideration when engaging in activities that involve fast movement and wheels especially...</p>
+    </div>
+
+    <div class="row">
+      <div class="col-2 col-s-2">
+        <div class="aside">
+          <ul>
+            <li>
+              <svg width="50" height="5">
+                <rect width="50" height="5" style="fill:#79de2b;stroke-width:10;stroke:none" />
+              </svg>
+              <text>Paved Routes</text>
+            </li>
+            <br>
+            <li>
+              <svg width="50" height="5">
+                <rect width="50" height="5" style="fill:Black;stroke-width:10;stroke:none" />
+              </svg>
+              <text>Railroad Routes</text>
+            </li>
+            <br>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#009921" stroke-width="2" fill="#009921" fill-opacity="1"/>
+              </svg>
+              <text>Emergency Care</text>
+            </li>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#fe0101" stroke-width="0" fill="#fe0101" fill-opacity=".5"/>
+              </svg>
+              <text>Fire Stations</text>
+            </li>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#053ae7" stroke-width="0" fill="#053ae7" fill-opacity="1"/>
+              </svg>
+              <text>Police Stations</text>
+            </li>
+            <li>
+              <svg width="27" height="27">
+                <circle cx="12" cy="14" r="10" stroke="#fe0101" stroke-width="3" fill="#053ae7" fill-opacity="1"/>
+              </svg>
+              <text>Dual Facility</text>
+            </li>
+            <br>
+            <li>
+              <svg width="0" height="0">
+                <img src="images/marker1.gif" height=20px width=20px>
+              </svg>
+              <text>Notable Locations</text>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-7 col-s-9">
+        <h4>Map 2</h4>
+        <div id="地図2"></div>
+        <p>This second map shows the </p>
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="aside">
+          <h3>Location Preview</h3>
+          <img src="images/PointRuston.gif" height=200px>
+        </div>
+      </div>
+    </div>
+
+    <div class="infobar2">
+      <p>So as to not disturb the locals as we ride, the noise threshold of each are must be considered too. What at the natural sounds of the area?...</p>
+    </div>
+
+    <div class="infobar3"></div>
+    <p id="conclu">Conclusion line:<br>After reviewing these two maps you’re ready to ride! You now better understand…</p>
+    <br>
+    <div id="footer">
+      <p id="footer">Footer: Area for credits... </p>
+    </div>
+
+    <script src="JS/mainindex.js"></script>
+    <script src="JS/index1.js"></script>
+    <script src="JS/index2.js"></script>
+  </body>
+</html>
