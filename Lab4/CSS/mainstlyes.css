@@ -31,7 +31,7 @@ h4 {
   color: #0e3825;
 	font-family: 'Cinzel Decorative';font-size: 22px;
   font-style: italic;
-  background-image: linear-gradient(to right, #6f050582,#ac7303);
+  background-image: linear-gradient(to right, #ac7303, #6f050582);
   border: 5px solid #073107;
 }
 
@@ -130,7 +130,7 @@ ul {
 #conclu {
   font-style: italic;
   color: #333000;
-  text-align: left;
+  text-align: center;
   font-size: 15px
 }
 #footer {
