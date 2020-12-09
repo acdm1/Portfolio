@@ -7,18 +7,18 @@ var 地図1 = new mapboxgl.Map({
   zoom: 9.5
 });
 //****************************************//
-地図1.addControl(new mapboxgl.GeolocateControl({
-			positionOptions: {
-					enableHighAccuracy: true
-			},
-			showUserLocation: true
-	}), 'top-left'
-);
-
 地図1.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl
   })
+);
+
+地図1.addControl(new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  showUserLocation: true
+}), 'top-left'
 );
 
 地図1.addControl(new mapboxgl.FullscreenControl());
@@ -32,18 +32,19 @@ var 地図2 = new mapboxgl.Map({
   zoom: 9.5
 });
 //****************************************//
-地図2.addControl(new mapboxgl.GeolocateControl({
-			positionOptions: {
-					enableHighAccuracy: true
-			},
-			showUserLocation: true
-	}), 'top-left'
-);
 
 地図2.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl
   })
+);
+
+地図2.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    showUserLocation: true
+  }), 'top-left'
 );
 
 地図2.addControl(new mapboxgl.FullscreenControl());
@@ -85,23 +86,4 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
-//****************************************//
 //****************************************//
