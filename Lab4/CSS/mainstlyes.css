@@ -50,6 +50,24 @@ p {
 }
 
 /***************************************/
+#地図1 {
+  position: relative !important;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
+  border: 10px solid #073107;
+}
+
+#地図2 {
+  position: relative !important;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
+  border: 10px solid #073107;
+}
+/***************************************/
 * {
   box-sizing: border-box;
 }

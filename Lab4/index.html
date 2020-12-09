@@ -15,6 +15,8 @@
           <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css"/>
           <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
   </head>
   <body>
     <div class="header">
@@ -82,6 +84,8 @@
         </div>
       </div>
     </div>
+
+    <canvas id="myChart" height="50"></canvas>
 
     <div class="infobar2">
       <p>★When first learning what you can and can’t get away with when you’re new to an area, one of the first demographics to consider is the elderly. With respect, safety, and generational/cultural differences in mind, proximity to the elderly is a huge consideration when engaging in activities that also involve fast movements and wheels especially. Best practices for utilizing this map would begin by asking users to first consider their own location. Which paved paths are near you? From there two things become important, the first is the age of those in the area. Are we going to run into generational and cultural barriers when we encounter the elderly while out riding. And secondly how does the presence of older people, particularly those who live in close proximity to golf courses, influence the local experience as a whole. Utilizing golf courses as a measure of a path’s proximity to privilege assist us in understanding the types of elderly people we’ll encounter while riding. Chambers bay is a good example. Riding around in that local, you’ll be near a public golf course, so the elderly you’re likely to encounter are sure to be more receptive of riders on paved paths. This is not without warning though, as some areas of the path are used by the elderly more than others, while other areas are just inaccessible to many of them after certain points. Chambers serves as a good example of a location that is balanced, and particularly ideal for riders of all skill levels who are good at finding just the right stretch of paved paths to practice their skills on.</p>
@@ -161,6 +165,7 @@
     </div>
 
     <div class="infobar3"></div>
+
     <p id="conclu">Mission Statement:<br>• The mission of the Paved Routes & Riding Guide is ultimately safety, and after reviewing these two maps you should really be ready to ride! You now better understand most of the potential risks to a smooth, encounter-free, ride in your area. These maps are not to be shared with those who might ruin the ride for future boarders and pathfinders though. By providing this information we simply aim to help you find the stretches of paved paths to either gravitate toward or avoid, based on the demographic information on the county. We simply hope you find the best location to harness your skills!</p>
     <br>
     <div id="footer">
@@ -168,7 +173,5 @@
     </div>
 
     <script src="JS/mainindex.js"></script>
-    <script src="JS/index1.js"></script>
-    <script src="JS/index2.js"></script>
   </body>
 </html>
