@@ -1293,7 +1293,8 @@
 		-ms-flex-direction: column;
 		flex-direction: column;
 		padding: 8em 0 6em 0;
-		background-image: url("/images/SkyGrade2.JPG");
+		/* background-image: url("/images/SkyGrade2.JPG"); */
+		background-image: url("https://i.imgur.com/ex67BlR.jpg");
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
