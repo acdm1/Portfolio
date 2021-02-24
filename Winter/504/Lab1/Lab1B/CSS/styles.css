@@ -1,0 +1,10 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #map {
+  height: 100%;
+  width: 100vw;
+  background-image: linear-gradient(to right, #343332, white);
+}
