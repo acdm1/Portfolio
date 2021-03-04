@@ -1,0 +1,5 @@
+GRANT USAGE ON SEQUENCE lab_3b_template_cartodb_id_seq
+  TO publicuser;
+
+REVOKE INSERT ON TABLE lab_3b_template_cartodb_id_seq
+  FROM publicuser; 
