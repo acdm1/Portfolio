@@ -12,10 +12,11 @@ var drawnItems = L.featureGroup().addTo(map);
 var cartoData = L.layerGroup().addTo(map);
 var url = "https://acdm1.carto.com/api/v2/sql";
 var urlGeoJSON = url + "?format=GeoJSON&q=";
-var sqlQuery = "SELECT the_geom, description, title FROM lab_3b_martin";
+var sqlQuery = "SELECT the_geom, description, name FROM lab_3b_martin";
 function addPopup(feature, layer) {
     layer.bindPopup(
-        "<b>" + feature.properties.title + "</b><br>" +
+        "<b>" + feature.properties.name + "</b><br>" +
+        feature.properties.address + "<br>" +
         feature.properties.description
     );
 }
@@ -54,13 +55,7 @@ fetch(urlGeoJSON + sqlQuery)
       var popupContent =
           '<form>' +
 
-          'Title:<br><input type="text" id="input_title"><br>' +
-            '<input type="radio" id="input_Type_1_Pub" name="LocType" value="PublicService">' +
-              '<label for="PublicService">Public Service</label><br>' +
-            '<input type="radio" id="input_Type_1_Rec" name="LocType" value="Recreation">' +
-              '<label for="Recreation">Recreation</label><br>' +
-            '<input type="radio" id="input_Type_1_Other" name="LocType" value="Other">' +
-              '<label for="Other">Other</label><br>' +
+          'Title:<br><input type="text" id="input_name"><br>' +
 
           'Address:<br><input type="text" id="input_address"><br>' +
 
@@ -90,21 +85,15 @@ fetch(urlGeoJSON + sqlQuery)
       if(e.target && e.target.id == "submit") {
 
           // Get user name and description
-          var enteredTitle = document.getElementById("input_title").value;
+          var enteredUsername = document.getElementById("input_name").value;
           var enteredDescription = document.getElementById("input_desc").value;
           var enteredAddress = document.getElementById("input_address").value;
-          var enteredPublicService = document.getElementById("input_Type_1_Pub").value;
-          var enteredRecreation = document.getElementById("input_Type_1_Rec").value;
-          var enteredOther = document.getElementById("input_Type_1_Other").value;
 
 // Print user name and description
 
-          // console.log('Title:',enteredTitle);
+          // console.log('Title:',enteredUsername);
           // console.log('Description:',enteredDescription);
           // console.log('Address:', enteredAddress);
-          // console.log('Type_1:', enteredPublicService);
-          // console.log('Type_1:', enteredRecreation);
-          // console.log('Type_1:', enteredOther);
           //
           // drawnItems.eachLayer(function(layer) {
           //     var drawing = JSON.stringify(layer.toGeoJSON().geometry);
@@ -117,10 +106,11 @@ fetch(urlGeoJSON + sqlQuery)
             // Create SQL expression to insert layer
                   var drawing = JSON.stringify(layer.toGeoJSON().geometry);
                   var sql =
-                      "INSERT INTO lab_3b_martin (the_geom, title, description) " +
+                      "INSERT INTO lab_3b_martin (the_geom, name, description, address) " +
                       "VALUES (ST_SetSRID(ST_GeomFromGeoJSON('" +
                       drawing + "'), 4326), '" +
-                      // enteredUsername + "', '" +
+                      enteredUsername + "', '" +
+                      enteredAddress + "', '" +
                       enteredDescription + "')";
                   console.log(sql);
 
@@ -146,7 +136,8 @@ fetch(urlGeoJSON + sqlQuery)
               //so it persists on the map without you having to refresh the page
               var newData = layer.toGeoJSON();
               newData.properties.description = enteredDescription;
-              // newData.properties.name = enteredUsername;
+              newData.properties.name = enteredUsername;
+              newData.properties.address = enteredAddress;
               L.geoJSON(newData, {onEachFeature: addPopup}).addTo(cartoData);
 
           });
