@@ -12,7 +12,7 @@ var drawnItems = L.featureGroup().addTo(map);
 var cartoData = L.layerGroup().addTo(map);
 var url = "https://acdm1.carto.com/api/v2/sql";
 var urlGeoJSON = url + "?format=GeoJSON&q=";
-var sqlQuery = "SELECT the_geom, description, name FROM lab_3c_martin";
+var sqlQuery = "SELECT the_geom, description, address, name FROM lab_3c_martin";
 
 function addPopup(feature, layer) {
     layer.bindPopup(
